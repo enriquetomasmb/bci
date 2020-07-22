@@ -1,0 +1,2 @@
+Dentro de esta carpeta se encuentran los rawdata capturados con OpenBCI sin emplear el script automático del repositorio.
+Es necesario el cambiarle de extensión de TXT -> CSV para procesarlo.
