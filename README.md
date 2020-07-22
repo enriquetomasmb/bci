@@ -5,5 +5,6 @@ Trabajo Fin de Grado - University of Murcia
 
 Enrique Tomás Martínez Beltrán - enriquetomas.martinezb@um.es
 
-www.linkedin.com/in/enrique-tomas
-enriquetomasmb@gmail.com
+https://linkedin.com/in/enrique-tomas
+
+https://enriquetomasmb.com
