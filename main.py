@@ -116,7 +116,7 @@ def main():
     args = parser.parse_args()
 
     experiment = args.name
-    experiment = 'exp_23-07-2020-00-28-33'
+    # experiment = 'exp_23-07-2020-00-28-33'
     # experiment_time = float(args.time)
     mode = args.mode
     total_img = int(args.images)
