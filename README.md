@@ -105,7 +105,7 @@ For more information, see the research in the TFG document.
 ## Tools
 
 * [OpenBCI Cyton](https://openbci.com/) - EEG Recording
-* [Python](https://www.python.org/) - Python and the libraries for the creation of the experiment and synchronization of the EEG signal
+* [Python](https://www.python.org/) - Python and the libraries for the creation of the experiment and EEG signal synchronization
 
 
 ## Roadmap
