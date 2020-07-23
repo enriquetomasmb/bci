@@ -4,7 +4,7 @@
   <a href="https://github.com/enriquetomasmb/bci-tfg">
     <img src="experiments/bci.png" alt="BCI" width="400" height="260">
   </a>
-  <h3 align="center">Trabajo Fin de Grado</h3>
+  <h3 align="center">End of Degree Project</h3>
 
   <p align="center">
     Automatic Oddball paradigm scenario creation, EEG signal processing and P300 ERP detection
