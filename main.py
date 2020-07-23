@@ -86,25 +86,25 @@ def main():
                         default="exp_{}".format(datetime.now().strftime("%d-%m-%Y-%H-%M-%S")),
                         help='Nombre del experimento')
     parser.add_argument('-dim', '--dim', dest='size_monitor', default=[1920, 1080],
-                        help='Dimensiones de la pantalla (p.e [1920,1080])')
+                        help='Dimensiones de la pantalla (default [1920,1080])')
     parser.add_argument('-dm', '--distmon', dest='distance_monitor', default=67,
                         help='Distancia al monitor (default 67cm)')
     parser.add_argument('-m', '--mode', dest='mode', default=2,
-                        help='Modo de ejecución del programa')
+                        help='Modo de ejecución del programa (default 2)')
     # parser.add_argument('-t', '--time', dest='time', default=20,
     #                     help='Tiempo de duración de la grabación')
     parser.add_argument('-i', '--images', dest='images', default=30,
-                        help='Número de imágenes distintas utilizadas en el experimento')
+                        help='Número de imágenes distintas utilizadas en el experimento (default 30)')
     parser.add_argument('-p', dest='prob_target', default=0.1,
-                        help='Probabilidad de aparición del Target en el experimento (tanto por 1)')
+                        help='Probabilidad de aparición del Target en el experimento -tanto por 1- (default 0.1)')
     parser.add_argument('-tt', dest='target_time', default=5,
-                        help='Tiempo de visualización del target (en segundos)')
+                        help='Tiempo de visualización del target -en segundos- (default 5s)')
     parser.add_argument('-in', dest='image_interval', default=0.250,
-                        help='Tiempo transcurrido entre imágenes (en segundos)')
+                        help='Tiempo transcurrido entre imágenes -en segundos- (default 0.250s)')
     parser.add_argument('-io', dest='image_offset', default=0.150,
-                        help='Tiempo offset posterior a una imagen (en segundos)')
+                        help='Tiempo offset posterior a una imagen -en segundos- (default 0.150s)')
     parser.add_argument('-j', dest='jitter', default=0.2,
-                        help='Tiempo jitter variable al mostrar imagen (en segundos)')
+                        help='Tiempo jitter variable al mostrar imagen -en segundos- (defualt 0.2)')
     parser.add_argument('-v', '--version', action='version',
                         version='%(prog)s ' + VERSION, help="Versión del programa.")
     parser.add_argument('-a', '--about', action='version',
@@ -116,7 +116,7 @@ def main():
     args = parser.parse_args()
 
     experiment = args.name
-    # experiment = 'exp_23-07-2020-00-28-33'
+    experiment = 'exp_23-07-2020-00-28-33'
     # experiment_time = float(args.time)
     mode = args.mode
     total_img = int(args.images)
