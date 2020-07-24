@@ -4,7 +4,7 @@
   <a href="https://github.com/enriquetomasmb/bci-tfg">
     <img src="experiments/bci.png" alt="BCI" width="400" height="260">
   </a>
-  <h3 align="center">Trabajo Fin de Grado</h3>
+  <h3 align="center">End of Degree Project</h3>
 
   <p align="center">
     Automatic Oddball paradigm scenario creation, EEG signal processing and P300 ERP detection
@@ -105,7 +105,7 @@ For more information, see the research in the TFG document.
 ## Tools
 
 * [OpenBCI Cyton](https://openbci.com/) - EEG Recording
-* [Python](https://www.python.org/) - Python and the libraries for the creation of the experiment and synchronization of the EEG signal
+* [Python](https://www.python.org/) - Python and the libraries for the creation of the experiment and EEG signal synchronization
 
 
 ## Roadmap
