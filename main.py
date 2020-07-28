@@ -128,11 +128,11 @@ def main():
 
         if not os.path.isdir('experiments/' + experiment):
             os.makedirs("experiments/{}/target".format(experiment))
-            os.makedirs("experiments/{}/non_target".format(experiment))
+            os.makedirs("experiments/{}/no_target".format(experiment))
             os.makedirs("experiments/{}/records".format(experiment))
 
         if not os.listdir('experiments/{}/target'.format(experiment)) or not os.listdir(
-                'experiments/{}/non_target'.format(experiment)):
+                'experiments/{}/no_target'.format(experiment)):
             if (mode == 1):
                 printInfo("Modo 1 seleccionado (Modo manual)")
                 # Las imágenes son añadidas manualmente, únicamente se obtienen con la aplicación
@@ -163,7 +163,7 @@ def main():
                         is_target = True
                         continue
 
-                    with open('experiments/{}/non_target/non_target_{}.jpeg'.format(experiment, count),
+                    with open('experiments/{}/no_target/no_target_{}.jpeg'.format(experiment, count),
                               'wb') as out_file:
                         shutil.copyfileobj(response.raw, out_file)
                     del response
@@ -243,15 +243,15 @@ def main():
             return visual.ImageStim(win=window, image=file, size=size_monitor)
 
         targets = []
-        nontargets = []
+        no_targets = []
 
         t_argets = glob('experiments/{}/target/*.jpeg'.format(experiment))
         for i in t_argets:
             targets.append(cargarImagen(i))
 
-        not_argets = glob('experiments/{}/non_target/*.jpeg'.format(experiment))
+        not_argets = glob('experiments/{}/no_target/*.jpeg'.format(experiment))
         for i in not_argets:
-            nontargets.append(cargarImagen(i))
+            no_targets.append(cargarImagen(i))
 
         text1 = visual.TextBox(window=window,
                                text='[Trabajo Fin de Grado - Enrique Tomás Martínez Beltrán]',
@@ -342,7 +342,7 @@ def main():
             core.wait(image_interval + np.random.rand() * jitter)
 
             img_type = images['img_type'].iloc[i]
-            image = choice(targets if img_type == 1 else nontargets)
+            image = choice(targets if img_type == 1 else no_targets)
             nImage = nImage + 1
             if img_type == 1:
                 nTarget = nTarget + 1
