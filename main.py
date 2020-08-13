@@ -27,7 +27,7 @@ from termcolor import colored
 psycholog.console.setLevel(logging.CRITICAL)
 import numpy as np
 from random import randint
-from pandas import DataFrame
+import pandas as pd
 from psychopy import visual, core, event, monitors
 from time import time
 from pylsl import StreamInfo, StreamOutlet, local_clock
@@ -195,37 +195,49 @@ def main():
 
         if jitter:
             printInfo("Jitter: " + str(jitter * 1000) + " ms")
-        '''
-        1 -> TARGET
-        0 -> NO TARGET
-        '''
-        # Array con total_images de [0,1] con 0.1 de probabilidad el 1 -> TARGET
-        img_types = np.random.binomial(1, prob_target, total_img)
-        # Ajuste para evitar 2 o más Target seguidos
-        def check(lst):
-            caux = 0
-            last = lst[0]
-            for i, num in enumerate(lst[1:]):
-                if num == 1 and last == 1:
-                    caux = caux + 1
-                    lst[i] = 0
-                last = num
-            return caux
 
-        n = check(img_types)
-        for i in range(n):
-            while (True):
-                r = randint(0, len(img_types))
-                if img_types[r] != 1:
-                    img_types[r] = 1
-                if (check(img_types)):
-                    continue
-                else:
-                    break
+        try:
+            '''
+            Recuperamos metadata.txt del experimento (si existe)
+            '''
+            images = pd.read_csv('experiments/{}/metadata.txt'.format(experiment))
 
-        images = DataFrame(dict(img_type=img_types,
-                                  timestamp=np.zeros(total_img)))
-        images.to_csv('experiments/{}/metadata.txt'.format(experiment), index=False)
+        except:
+            printError("Metadata no encontrado, creando metadata aleatorio...")
+            '''
+            1 -> TARGET
+            0 -> NO TARGET
+            '''
+            # Array con total_images de [0,1] con 0.1 de probabilidad el 1 -> TARGET
+            img_types = np.random.binomial(1, prob_target, total_img)
+
+            # Ajuste para evitar 2 o más Target seguidos
+            def check(lst):
+                caux = 0
+                last = lst[0]
+                for i, num in enumerate(lst[1:]):
+                    if num == 1 and last == 1:
+                        caux = caux + 1
+                        lst[i] = 0
+                    last = num
+                return caux
+
+            n = check(img_types)
+            for i in range(n):
+                while (True):
+                    r = randint(0, len(img_types))
+                    if img_types[r] != 1:
+                        img_types[r] = 1
+                    if (check(img_types)):
+                        continue
+                    else:
+                        break
+
+
+            images = pd.DataFrame(dict(img_type=img_types,
+                                       timestamp=np.zeros(total_img)))
+            images.to_csv('experiments/{}/metadata.txt'.format(experiment), index=False)
+
 
         print()
         printInfo("DataFrame generado: ")
@@ -356,7 +368,7 @@ def main():
             '''
             Si img_type = 1 -> Target -> Out=1
             Si img_type = 0 -> NoTarget -> Out=2
-            # El Out implica escritura en csv final por el hilo
+            # El Out implica escritura en csv final 
             '''
             outlet.push_sample([2 if img_type == 0 else 1], timestamp)
             window.flip()
