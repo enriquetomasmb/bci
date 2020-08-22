@@ -81,6 +81,27 @@ def load_raw(filename, sfreq=256., ch_ind=[0, 1, 2, 3],
 
     return raw
 
+def create_raw_with_noise(raw_without_noise, gaussian_distribution=None):
+
+    data = raw_without_noise.get_data()
+
+    '''
+    Se crean muestras parametrizadas de una distribución normal (gaussiana) para generar ruido en la señal
+    '''
+    if len(data) == len(gaussian_distribution):
+        print("Aplicando ruido en la señal...")
+        data = data + gaussian_distribution
+    else:
+        print("Error en la aplicación de ruido. Estructuras de datos con tamaños distintos.")
+        return
+
+    # info = create_info(ch_names=ch_names, ch_types=ch_types,
+    #                    sfreq=sfreq)
+    raw = RawArray(data=data, info=raw_without_noise.info)
+    montage = 'standard_1020'
+    raw.set_montage(montage)
+
+    return raw
 
 
 def convert_openbci(path_dataset):
