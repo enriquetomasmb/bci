@@ -86,6 +86,7 @@ def create_raw_with_noise(raw_without_noise, gaussian_distribution=None):
     [!] FUNCIÓN para hacer una copia de un Raw Data, aplicarle ruido y devolverlo como estructura Raw.
     '''
     data = raw_without_noise.get_data()
+    stim = raw_without_noise.get_data(picks=['Stim'])
 
     '''
     Se crean muestras parametrizadas de una distribución normal (gaussiana) para generar ruido en la señal
@@ -93,6 +94,7 @@ def create_raw_with_noise(raw_without_noise, gaussian_distribution=None):
     if len(data) == len(gaussian_distribution):
         print("Aplicando ruido a la señal...")
         data = data + gaussian_distribution
+        data[-1] = stim
     else:
         print("Error en la aplicación de ruido. Estructuras de datos con tamaños distintos.")
         return

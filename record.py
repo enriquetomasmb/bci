@@ -49,9 +49,8 @@ def record_experiment(experiment, experiment_time):
         raise (RuntimeError("No se ha podido encontrar ningún EEG stream, prueba a reiniciar el módulo LSL"))
 
     printInfo("Conectando con el stream de la señal EEG...")
-    inlet_eeg = StreamInlet(streams[0], max_chunklen=12)
+    inlet_eeg = StreamInlet(streams[0])
     # inlet_eeg = StreamInlet(streams[0])
-    # eeg_time_correction = inlet_eeg.time_correction()
 
     info = inlet_eeg.info()
     description = info.desc()
@@ -65,7 +64,7 @@ def record_experiment(experiment, experiment_time):
 
     ch = description.child('channels').first_child()
     ch_names = [ch.child_value('label')]
-    if (not ch_names or not ch_names[0]):
+    if (not ch_names or len(ch_names) < 8):
         ch_names = ch_names_default
 
     datos_input = []
@@ -78,7 +77,6 @@ def record_experiment(experiment, experiment_time):
     if estimulo_stream:
         printInfo("Conectando con el stream de Estimulo...")
         inlet_estimulo = StreamInlet(estimulo_stream[0])
-        # marker_time_correction = inlet_estimulo.time_correction()
     else:
         inlet_estimulo = False
         printError("No se ha podido encontrar ningún Estímulo stream")
@@ -92,7 +90,7 @@ def record_experiment(experiment, experiment_time):
 
     while (time() - inicio_captura) < experiment_time:
         try:
-            data, timestamp = inlet_eeg.pull_chunk(timeout=1.0, max_samples=12)
+            data, timestamp = inlet_eeg.pull_chunk(timeout=0.0)
             if timestamp:
                 datos_input.append(data)
                 timestamps.extend(timestamp)
@@ -107,6 +105,8 @@ def record_experiment(experiment, experiment_time):
     time_correction = inlet_eeg.time_correction()
 
     datos_input = np.concatenate(datos_input, axis=0)
+    if chs_lsl > 8:
+        datos_input = datos_input[:, :8]
     timestamps = np.array(timestamps) + time_correction
 
     if dejitter:
