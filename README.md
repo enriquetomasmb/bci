@@ -121,3 +121,4 @@ See the [open issues](https://github.com/enriquetomasmb/bci-tfg/issues) for a li
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
+
