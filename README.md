@@ -7,7 +7,7 @@
   <h3 align="center">End of Degree Project</h3>
 
   <p align="center">
-    Automatic Oddball paradigm scenario creation, EEG signal processing and P300 ERP detection
+    Framework for detection of P300 waves and noise based cyber attacks in Brain-Machine Interfaces
     <br>
   </p>
 </p>
@@ -19,6 +19,7 @@
 </a>
 <br>
 Implementation of an automatic system that allows an Oddball experiment synchronized with EEG signal recording.<br>
+It also allows the processing of the acquired signal and the detection of the P300 by trained classifiers.<br>
 This project is part of the End of Degree Project in Computer Engineering at the University of Murcia.
 
 ### Prerequisites
