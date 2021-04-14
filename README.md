@@ -20,8 +20,7 @@
   <img src="experiments/umu.jpg" alt="BCI" width="195" height="50">
 </a>
 <br>
-Implementation of a framework for EEG signal acquisition from a BCI, signal processing, and P300 detection using trained classifiers.<br>
-Besides, it deploys a scenario where P300 evoked potentials are generated through the Oddball paradigm and visual stimuli.<br>
+Implementation of a framework for EEG signal acquisition from a BCI, signal processing, and P300 detection using trained classifiers. Besides, it deploys a scenario where P300 evoked potentials are generated through the Oddball paradigm and visual stimuli.<br>
 This project is part of the End of Degree Project in Computer Engineering at the University of Murcia.
 
 ### Prerequisites
