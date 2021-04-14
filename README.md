@@ -4,10 +4,12 @@
   <a href="https://github.com/enriquetomasmb/bci-tfg">
     <img src="experiments/bci.png" alt="BCI" width="400" height="260">
   </a>
-  <h3 align="center">End of Degree Project</h3>
+  <h3 align="center">Brain-Computer Interface Project</h3>
 
   <p align="center">
-    Framework for detection of P300 waves and noise based cyber attacks in Brain-Machine Interfaces
+    Framework for P300 wave detection and noise-based cyber-attacks in Brain-Computer Interfaces
+    <br>
+    Noise-based Cyberattacks Generating Fake P300 Waves in Brain-Computer Interfaces
     <br>
   </p>
 </p>
@@ -18,8 +20,8 @@
   <img src="experiments/umu.jpg" alt="BCI" width="195" height="50">
 </a>
 <br>
-Implementation of an automatic system that allows an Oddball experiment synchronized with EEG signal recording.<br>
-It also allows the processing of the acquired signal and the detection of the P300 by trained classifiers.<br>
+Implementation of a framework for EEG signal acquisition from a BCI, signal processing, and P300 detection using trained classifiers.<br>
+Besides, it deploys a scenario where P300 evoked potentials are generated through the Oddball paradigm and visual stimuli.<br>
 This project is part of the End of Degree Project in Computer Engineering at the University of Murcia.
 
 ### Prerequisites
@@ -116,7 +118,8 @@ See the [open issues](https://github.com/enriquetomasmb/bci-tfg/issues) for a li
 
 ## Author
 
-* **Enrique Tomás Martínez Beltrán** - [LinkedIn](https://www.linkedin.com/in/enrique-tomas/) - [ResearchGate](https://www.researchgate.net/profile/Enrique_Martinez_Beltran) - [Website](https://enriquetomasmb.com)
+* **Enrique Tomás Martínez Beltrán** - [Website](https://enriquetomasmb.com) - [LinkedIn](https://www.linkedin.com/in/enrique-tomas/)
+
 
 ## License
 
