@@ -7,7 +7,7 @@
   <h3 align="center">Brain-Computer Interface Project</h3>
 
   <p align="center">
-    Framework for P300 wave detection and noise-based cyber-attacks in Brain-Computer Interfaces
+    Framework for P300 wave detection and noise-based cyberattacks in Brain-Computer Interfaces
     <br>
     Noise-based Cyberattacks Generating Fake P300 Waves in Brain-Computer Interfaces
     <br>
