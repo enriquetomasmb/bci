@@ -22,6 +22,10 @@
 <br>
 Implementation of a framework for EEG signal acquisition from a BCI, signal processing, and P300 detection using trained classifiers. Besides, it deploys a scenario where P300 evoked potentials are generated through the Oddball paradigm and visual stimuli.<br>
 This project is part of the End of Degree Project in Computer Engineering at the University of Murcia.
+<br><br>
+
+This repository contains a related code for the paper *[Noise-based cyberattacks generating fake P300 waves in brain–computer interfaces](https://doi.org/10.1007/s10586-021-03326-z)*.
+
 
 ### Prerequisites
 
@@ -119,7 +123,27 @@ See the [open issues](https://github.com/enriquetomasmb/bci-tfg/issues) for a li
 
 * **Enrique Tomás Martínez Beltrán** - [Website](https://enriquetomasmb.com) - [LinkedIn](https://www.linkedin.com/in/enrique-tomas/)
 
+## Citation
 
+If you use this repository, please cite our [paper](https://doi.org/10.1007/s10586-021-03326-z):
+
+```
+@article{MartinezBeltran:2021,
+author={Mart{\'i}nez Beltr{\'a}n, Enrique Tom{\'a}s
+and Quiles P{\'e}rez, Mario
+and L{\'o}pez Bernal, Sergio
+and Huertas Celdr{\'a}n, Alberto
+and Mart{\'i}nez P{\'e}rez, Gregorio},
+title={Noise-based cyberattacks generating fake P300 waves in brain--computer interfaces},
+journal={Cluster Computing},
+year={2021},
+month={Jul},
+day={10},
+abstract={Most of the current Brain--Computer Interfaces (BCIs) application scenarios use electroencephalographic signals (EEG) containing the subject's information. It means that if EEG were maliciously manipulated, the proper functioning of BCI frameworks could be at risk. Unfortunately, it happens in frameworks sensitive to noise-based cyberattacks, and more efforts are needed to measure the impact of these attacks. This work presents and analyzes the impact of four noise-based cyberattacks attempting to generate fake P300 waves in two different phases of a BCI framework. A set of experiments show that the greater the attacker's knowledge regarding the P300 waves, processes, and data of the BCI framework, the higher the attack impact. In this sense, the attacker with less knowledge impacts 1{\%} in the acquisition phase and 4{\%} in the processing phase, while the attacker with the most knowledge impacts 22{\%} and 74{\%}, respectively.},
+issn={1573-7543},
+doi={10.1007/s10586-021-03326-z},
+}
+```
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
