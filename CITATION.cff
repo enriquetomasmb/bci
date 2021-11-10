@@ -1,0 +1,19 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: >-
+  Noise-based cyberattacks generating fake P300 waves
+  in brain–computer interfaces
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: Enrique Tomás
+    family-names: Martínez Beltrán
+    email: enriquetomas@um.es
+    affiliation: University of Murcia
+    orcid: 'https://orcid.org/0000-0002-5169-2815'
+version: 1.0
+date-released: 2021-08-11
